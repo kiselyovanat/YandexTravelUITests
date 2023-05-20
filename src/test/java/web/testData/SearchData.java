@@ -1,18 +1,28 @@
 package web.testData;
 
-public class AviaSearchData {
-    private String city,
-    startDay,
-    startMonth,
-    endDay,
-    endMonth;
+public class SearchData {
+    private String departureCity,
+            destinationCity,
+            startDay,
+            startMonth,
+            endDay,
+            endMonth;
 
-    public String getCity() {
-        return city;
+    public String getDepartureCity() {
+        return departureCity;
     }
 
-    public AviaSearchData setCity(String city) {
-        this.city = city;
+    public SearchData setDepartureCity(String departureCity) {
+        this.departureCity = departureCity;
+        return this;
+    }
+
+    public String getDestinationCity() {
+        return destinationCity;
+    }
+
+    public SearchData setDestinationCity(String destinationCity) {
+        this.destinationCity = destinationCity;
         return this;
     }
 
@@ -20,7 +30,7 @@ public class AviaSearchData {
         return startDay;
     }
 
-    public AviaSearchData setStartDay(String startDay) {
+    public SearchData setStartDay(String startDay) {
         this.startDay = startDay;
         return this;
     }
@@ -29,7 +39,7 @@ public class AviaSearchData {
         return startMonth;
     }
 
-    public AviaSearchData setStartMonth(String startMonth) {
+    public SearchData setStartMonth(String startMonth) {
         this.startMonth = startMonth;
         return this;
     }
@@ -38,7 +48,7 @@ public class AviaSearchData {
         return endDay;
     }
 
-    public AviaSearchData setEndDay(String endDay) {
+    public SearchData setEndDay(String endDay) {
         this.endDay = endDay;
         return this;
     }
@@ -47,7 +57,7 @@ public class AviaSearchData {
         return endMonth;
     }
 
-    public AviaSearchData setEndMonth(String endMonth) {
+    public SearchData setEndMonth(String endMonth) {
         this.endMonth = endMonth;
         return this;
     }

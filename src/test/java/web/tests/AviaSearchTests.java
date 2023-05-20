@@ -4,31 +4,31 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import web.pages.AviaSearchPage;
 import web.pages.MainPage;
-import web.pages.SearchPage;
-import web.testData.AviaSearchData;
-import web.testData.AviaSearchDataGenerator;
+import web.testData.SearchData;
+import web.testData.SearchDataGenerator;
 
 
 public class AviaSearchTests extends TestBase {
 
-    public SearchPage searchPage = new SearchPage();
+    public AviaSearchPage aviaSearchPage = new AviaSearchPage();
     public MainPage mainPage = new MainPage();
 
     @Feature("Страница поиска авиабилетов Яндекс.Путешествия")
     @Story("Проверяем функцию поиска авиабилетов")
-    @DisplayName("Проверяем наличие результатов поиска авиабилетов в Белград")
+    @DisplayName("Проверяем наличие лучшего предложения среди результатов поиска авиабилетов из Москвы в Белград")
     @Test
-    void aviaSearchTest() {
-        AviaSearchData aviaSearchData = AviaSearchDataGenerator.generateSearchParams();
+    void aviaBestPriceOfferSearchTest() {
+        SearchData aviaSearchData = SearchDataGenerator.generateSearchParams("Москва", "Белград");
         mainPage.openPage("/")
-                .openCategory("Авиа");
-
-        searchPage.inputDestination(aviaSearchData.getCity())
+                .openCategory("Авиа")
+                .inputDestination(aviaSearchData.getDestinationCity())
                 .inputStartDate(aviaSearchData.getStartDay(), aviaSearchData.getStartMonth())
                 .inputEndDate(aviaSearchData.getEndDay(), aviaSearchData.getEndMonth())
-                .submit()
-                .checkSearchResultsHasBestPriceOffer();
+                .submit();
+
+        aviaSearchPage.checkSearchResultsHasBestPriceOffer();
 
     }
 }
