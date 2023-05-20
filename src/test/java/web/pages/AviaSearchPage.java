@@ -18,7 +18,6 @@ public class AviaSearchPage {
     public AviaSearchPage checkSearchResultsHasBestPriceOffer() {
         bestPriceOfferAvia.shouldBe(Condition.visible, Duration.ofSeconds(10));
 
-
         return this;
     }
 

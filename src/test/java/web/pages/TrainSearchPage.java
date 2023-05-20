@@ -5,7 +5,8 @@ import io.qameta.allure.Step;
 
 import java.time.Duration;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -33,14 +34,14 @@ public class TrainSearchPage {
     }
 
     @Step("Проверяем отображение фильтра \"Скоростные поезда\"")
-    public TrainSearchPage checkFastTrainFilterVisible(){
+    public TrainSearchPage checkFastTrainFilterVisible() {
         fastTrainFilter.shouldBe(visible, Duration.ofSeconds(10));
 
         return this;
     }
 
     @Step("Проверяем, что фильтр \"Скоростные поезда\" не отображается")
-    public TrainSearchPage checkFastTrainFilterNotVisible(){
+    public TrainSearchPage checkFastTrainFilterNotVisible() {
         sortButton.shouldBe(visible, Duration.ofSeconds(10)); //дожидаемся прогрузки блока с фильтрами и сортировкой
         fastTrainFilter.shouldNotBe(visible); // проверяем
 

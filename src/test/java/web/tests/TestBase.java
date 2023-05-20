@@ -1,7 +1,9 @@
 package web.tests;
 
 import com.codeborne.selenide.Configuration;
+import config.WebConfig;
 import helpers.Attach;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -9,15 +11,18 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.Map;
 
 public class TestBase {
+
+    static WebConfig webConfig = ConfigFactory.create(WebConfig.class, System.getProperties());
+
     @BeforeAll
     static void beforeAll() {
-        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-        Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion", "100.0");
-        Configuration.baseUrl = System.getProperty("baseUrl", "https://travel.yandex.ru");
-        Configuration.pageLoadStrategy = "eager";
-        // Configuration.remote = "https://user1:1234@"+ System.getProperty("selenoidUrl", "selenoid.autotests.cloud/wd/hub");
-        Configuration.holdBrowserOpen = true;
+        Configuration.browserSize = webConfig.getBrowserSize();
+        Configuration.browser = webConfig.getBrowser();
+        Configuration.browserVersion = webConfig.getBrowserVersion();
+        Configuration.baseUrl = webConfig.getBaseUrl();
+        if (webConfig.getRemoteUrl() != null) {
+            Configuration.remote = webConfig.getRemoteUrl();
+        }
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(

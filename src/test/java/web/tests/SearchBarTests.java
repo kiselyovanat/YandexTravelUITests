@@ -3,7 +3,6 @@ package web.tests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -30,6 +29,7 @@ public class SearchBarTests extends TestBase {
                 Arguments.of("Туры", List.of("Откуда", "Куда", "Когда", "7 ночей", "2 взрослых", "Найти"))
         );
     }
+
     @Feature("Главная страница сайта Яндекс.Путешествия")
     @Story("Проверяем содержимое главной страницы")
     @DisplayName("Проверяем пункты меню: ")

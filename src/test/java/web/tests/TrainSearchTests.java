@@ -24,6 +24,7 @@ public class TrainSearchTests extends TestBase {
         SearchData trainSearchData = SearchDataGenerator.generateSearchParams(departureCity, destinationCity);
         mainPage.openPage("/")
                 .openCategory("Ж/д")
+                .inputDeparture(trainSearchData.getDepartureCity())
                 .inputDestination(trainSearchData.getDestinationCity())
                 .inputStartDate(trainSearchData.getStartDay(), trainSearchData.getStartMonth())
                 .inputEndDate(trainSearchData.getEndDay(), trainSearchData.getEndMonth())
@@ -41,6 +42,7 @@ public class TrainSearchTests extends TestBase {
         SearchData trainSearchData = SearchDataGenerator.generateSearchParams(departureCity, destinationCity);
         mainPage.openPage("/")
                 .openCategory("Ж/д")
+                .inputDeparture(trainSearchData.getDepartureCity())
                 .inputDestination(trainSearchData.getDestinationCity())
                 .inputStartDate(trainSearchData.getStartDay(), trainSearchData.getStartMonth())
                 .inputEndDate(trainSearchData.getEndDay(), trainSearchData.getEndMonth())
@@ -58,6 +60,7 @@ public class TrainSearchTests extends TestBase {
         SearchData trainSearchData = SearchDataGenerator.generateSearchParams(departureCity, "Санкт-Петербург");
         mainPage.openPage("/")
                 .openCategory("Ж/д")
+                .inputDeparture(trainSearchData.getDepartureCity())
                 .inputDestination(trainSearchData.getDestinationCity())
                 .inputStartDate(trainSearchData.getStartDay(), trainSearchData.getStartMonth())
                 .inputEndDate(trainSearchData.getEndDay(), trainSearchData.getEndMonth())
@@ -75,6 +78,7 @@ public class TrainSearchTests extends TestBase {
         SearchData trainSearchData = SearchDataGenerator.generateSearchParams(departureCity, "Казань");
         mainPage.openPage("/")
                 .openCategory("Ж/д")
+                .inputDeparture(trainSearchData.getDepartureCity())
                 .inputDestination(trainSearchData.getDestinationCity())
                 .inputStartDate(trainSearchData.getStartDay(), trainSearchData.getStartMonth())
                 .inputEndDate(trainSearchData.getEndDay(), trainSearchData.getEndMonth())

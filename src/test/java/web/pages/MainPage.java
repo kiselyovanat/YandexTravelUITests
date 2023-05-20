@@ -57,7 +57,9 @@ public class MainPage {
 
     @Step("Вводим пункт отправления (Откуда)")
     public MainPage inputDeparture(String departure) {
-        departureCleanButton.click();
+        if (departureCleanButton.exists()) { //иногда поле заполняется текущей локацией, иногда нет
+            departureCleanButton.click();
+        }
         departureInput.click();
         departureInput.setValue(departure);
         citySearchResults.$(byText(departure)).click();
