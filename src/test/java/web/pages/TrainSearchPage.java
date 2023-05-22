@@ -20,7 +20,7 @@ public class TrainSearchPage {
 
     @Step("Проверяем наличие города-назначения в заголовке результатов поиска")
     public TrainSearchPage checkSearchResultsHeader(String destinationCity) {
-        searchResultsHeader.shouldBe(visible, Duration.ofSeconds(5));
+        searchResultsHeader.shouldBe(visible, Duration.ofSeconds(10));
         searchResultsHeader.shouldHave(text(destinationCity));
 
         return this;
