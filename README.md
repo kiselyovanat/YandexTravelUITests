@@ -31,7 +31,7 @@
 Allure-отчет включает в себя:
 * шаги выполнения тестов;
 * скриншот страницы в браузере в момент окончания автотеста;
-* Page Source;
+* исходный код страницы;
 * логи браузерной консоли;
 * видео выполнения автотеста.
 
@@ -42,38 +42,10 @@ Allure-отчет включает в себя:
 gradle clean test -Denv=local
 ```
 
-При необходимости можно переопределить параметры запуска
-```
-gradle clean test
--Denv=local
--Dbrowser=${BROWSER_NAME}
--DbrowserVersion=${BROWSER_VERSION}
--DbrowserSize=${BROWSER_SIZE}
--DbaseUrl=${BASE_URL}
-```
-
 ### Запуск тестов на удаленном браузере
 ```
 gradle clean test -Denv=remote
 ```
-При необходимости также можно переопределить параметры запуска
-
-```
-gradle clean test -Denv=remote
--Dbrowser=${BROWSER_NAME}
--DbrowserМersion=${BROWSER_VERSION}
--DbrowserSize=${BROWSER_SIZE}
--DbaseUrl=${BASE_URL}
--DremoteUrl=${REMOTE_BROWSER_URL}
-```
-
-### Параметры сборки
-
-* <code>BROWSER_NAME</code> – браузер, в котором будут выполняться тесты. По-умолчанию - <code>chrome</code>.
-* <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты. По-умолчанию - <code>105.0</code>.
-* <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты.
-* <code>BASE_URL</code> – Url, по которому будет открываться тестируемое приложение. По-умолчанию - <code>1920x1080</code>.
-* <code>REMOTE_BROWSER_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
 
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="images/logo/Jenkins.svg"> Сборка в Jenkins
 <p align="center">
@@ -90,7 +62,7 @@ gradle clean test -Denv=remote
 ### Результат выполнения теста
 
 <p align="center">
-<img title="Test Results in Alure" src="images/screenshots/allureReportTests.png">
+<img title="Test Results in Allure" src="images/screenshots/allureReportTests.png">
 </p>
 
 ### <img width="4%" style="vertical-align:middle" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
@@ -105,5 +77,5 @@ gradle clean test -Denv=remote
 
 К каждому тесту в отчете прилагается видео. Одно из таких видео представлено ниже.
 <p align="center">
-  <img title="Selenoid Video" src="images/gif/videoExample.gif">
+  <img title="Selenoid Video" src="images/gif/videoExample.mp4.">
 </p>
