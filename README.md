@@ -57,15 +57,51 @@ Allure-отчет включает в себя:
 
 ## :running_woman: Запуск тестов
 
+### Параметры сборки
+
+> <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты;
+>
+> <code>BROWSER</code> – браузер;
+>
+> <code>BROWSER_VERSION</code> – версия браузера;
+>
+> <code>BROWSER_SIZE</code> – размер окна браузера.
+
+Дефолтные значения параметров для локального запуска тестов задаются в файле <code>local.properties</code>.
+
+Дефолтные значения параметров для запуска тестов на удаленном сервере задаются в файле <code>remote.properties</code>. 
+(Для корректного запуска необхожимо передать адрес удаленного сервера)
+
 ### Локальный запуск тестов
-```
+```bash
 gradle clean test -Denv=local
 ```
 
-### Запуск тестов на удаленном браузере
-<code>REMOTE_URL</code> - адрес удаленного сервера, на котором будут запускаться тесты.
+Если необходимо переопределить дефолтные значения параметров (вместо {} подставить требуемое значение):
+
+```bash
+gradle clean test 
+-Dbrowser={BROWSER}
+-DbrowserVersion={BROWSER_VERSION}
+-DbrowserSize={BROWSER_SIZE}
+-DbaseUrl={BASE_URL}
 ```
+
+### Запуск тестов на удаленном сервере
+
+```bash
 gradle clean test -Denv=remote -DremoteUrl=${REMOTE_URL}
+```
+
+Если необходимо переопределить дефолтные значения параметров (вместо {} подставить требуемое значение):
+
+```bash
+gradle clean test 
+-Dbrowser={BROWSER}
+-DbrowserVersion={BROWSER_VERSION}
+-DbrowserSize={BROWSER_SIZE}
+-DremoteUrl={REMOTE_URL}
+-DbaseUrl={BASE_URL}
 ```
 
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="images/logo/Jenkins.svg"> Сборка в Jenkins
@@ -74,11 +110,12 @@ gradle clean test -Denv=remote -DremoteUrl=${REMOTE_URL}
 <img title="Jenkins Build" src="images/screenshots/jenkinsBuild.png">
 </p>
 
-1.  Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/18-kiselevanm-Jenkins-diploma/">**сборку в Jenkins**</a>
-2. В боковом меню выбрать пункт **"Собрать с параметрами"**
-3. Выбрать параметры из выпадающих списков
-4. Нажать кнопку **"Собрать"**
-5. После прогона тестов в блоке **"История сборок"** появятся ссылки на **Allure-отчет** и на **Allure TestOps**
+1.  Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/18-kiselevanm-Jenkins-diploma/">**сборку в Jenkins**</a>;
+2. В боковом меню выбрать пункт **"Собрать с параметрами"**;
+3. Выбрать параметр из выпадающего списка
+   4. В данной сборке задается только параметр для удаленного сервера для запуска теста, остальные значения параметров берутся из <code>remote.properties</code>;
+4. Нажать кнопку **"Собрать"**;
+5. После прогона тестов в блоке **"История сборок"** появятся ссылки на **Allure-отчет** и на **Allure TestOps**.
 
 
 ## <img width="4%" style="vertical-align:middle" title="Allure Report" src="images/logo/Allure_Report.svg"> Пример Allure-отчета
