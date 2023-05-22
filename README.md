@@ -17,6 +17,8 @@
 <img width="6%" title="Selenide" src="images/logo/Selenide.svg">
 <img width="6%" title="Selenoid" src="images/logo/Selenoid.svg">
 <img width="6%" title="Allure Report" src="images/logo/Allure_Report.svg">
+<img width="6%" title="Allure TestOps" src="images/logo/Allure_TO.svg">
+<img width="6%" title="Jira" src="images/logo/Jira.svg">
 <img width="6%" title="Gradle" src="images/logo/Gradle.svg">
 <img width="6%" title="JUnit5" src="images/logo/JUnit5.svg">
 <img width="6%" title="GitHub" src="images/logo/GitHub.svg">
@@ -59,6 +61,7 @@ gradle clean test -Denv=local
 ```
 
 ### Запуск тестов на удаленном браузере
+<code>REMOTE_URL</code> - адрес удаленного сервера, на котором будут запускаться тесты.
 ```
 gradle clean test -Denv=remote -DremoteUrl=${REMOTE_URL}
 ```
@@ -80,6 +83,27 @@ gradle clean test -Denv=remote -DremoteUrl=${REMOTE_URL}
 <p align="center">
 <img title="Test Results in Allure" src="images/screenshots/allureReportTests.png">
 </p>
+
+## <img width="4%" title="Allure TestOPS" src="images/logo/Allure_TO.svg"> Интеграция с Allure TestOps
+
+## Главный дашборд
+
+<p align="center">
+<img width="70%" title="Allure TestOps Dashboard" src="images/screenshots/allureTestOpsDashboard.png">
+</p>
+
+## Результаты выполнения тестов
+
+<p align="center">
+<img width="70%" title="Allure TestOps Results" src="images/screenshots/allureTestOpsResults.png">
+</p>
+
+## <img width="4%" title="Jira" src="images/logo/Jira.svg"> Интеграция с Jira
+
+<p align="center">
+<img width="70%" title="Jira" src="images/screenshots/jira.png">
+</p>
+
 
 ### <img width="4%" style="vertical-align:middle" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
 
