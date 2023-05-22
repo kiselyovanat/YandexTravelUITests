@@ -69,9 +69,17 @@ gradle clean test -Denv=remote -DremoteUrl=${REMOTE_URL}
 ```
 
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="images/logo/Jenkins.svg"> Сборка в Jenkins
+
 <p align="center">
 <img title="Jenkins Build" src="images/screenshots/jenkinsBuild.png">
 </p>
+
+1.  Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/18-kiselevanm-Jenkins-diploma/">**сборку в Jenkins**</a>
+2. В боковом меню выбрать пункт **"Собрать с параметрами"**
+3. Выбрать параметры из выпадающих списков
+4. Нажать кнопку **"Собрать"**
+5. После прогона тестов в блоке **"История сборок"** появятся ссылки на **Allure-отчет** и на **Allure TestOps**
+
 
 ## <img width="4%" style="vertical-align:middle" title="Allure Report" src="images/logo/Allure_Report.svg"> Пример Allure-отчета
 ### Overview
