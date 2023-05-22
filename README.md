@@ -111,7 +111,7 @@ gradle clean test
 </p>
 
 1.  Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/18-kiselevanm-Jenkins-diploma/">**сборку в Jenkins**</a>;
-   * для корректного открытия ссылки требуется авторизация на <a target="_blank" href="https://jenkins.autotests.cloud/">**jenkins.autotests.cloud**</a>
+   * Для корректного открытия ссылки требуется авторизация на <a target="_blank" href="https://jenkins.autotests.cloud/">**jenkins.autotests.cloud**</a>
 2. В боковом меню выбрать пункт **"Собрать с параметрами"**;
 3. Выбрать параметр из выпадающего списка
    * В данной сборке задается только параметр для удаленного сервера для запуска теста, остальные значения параметров берутся из <code>remote.properties</code>;
