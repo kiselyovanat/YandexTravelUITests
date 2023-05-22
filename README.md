@@ -6,6 +6,8 @@
 - [Список тестов](#bookmark_tabs-список-тестов)
 - [Сборка в Jenkins](#-сборка-в-jenkins)
 - [Пример Allure-отчета](#-пример-allure-отчета)
+- [Интеграция с Allure TestOps](#-интеграция-с-allure-testops)
+- [Интеграция с Jira](#-интеграция-с-jira)
 - [Уведомления в Telegram с использованием бота](#-уведомления-в-telegram-с-использованием-бота)
 - [Видео-пример запуска теста в Selenoid](#-видео-примера-запуска-теста-в-selenoid)
 
@@ -89,19 +91,19 @@ gradle clean test -Denv=remote -DremoteUrl=${REMOTE_URL}
 ## Главный дашборд
 
 <p align="center">
-<img width="70%" title="Allure TestOps Dashboard" src="images/screenshots/allureTestOpsDashboard.png">
+<img title="Allure TestOps Dashboard" src="images/screenshots/allureTestOpsDashboard.png">
 </p>
 
 ## Результаты выполнения тестов
 
 <p align="center">
-<img width="70%" title="Allure TestOps Results" src="images/screenshots/allureTestOpsResults.png">
+<img title="Allure TestOps Results" src="images/screenshots/allureTestOpsResults.png">
 </p>
 
 ## <img width="4%" title="Jira" src="images/logo/Jira.svg"> Интеграция с Jira
 
 <p align="center">
-<img width="70%" title="Jira" src="images/screenshots/jira.png">
+<img title="Jira" src="images/screenshots/jira.png">
 </p>
 
 
