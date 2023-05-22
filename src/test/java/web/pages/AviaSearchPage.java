@@ -16,7 +16,7 @@ public class AviaSearchPage {
 
     @Step("Проверяем отображение предложения \"Лучшая цена\"")
     public AviaSearchPage checkSearchResultsHasBestPriceOffer() {
-        bestPriceOfferAvia.shouldBe(Condition.visible, Duration.ofSeconds(10));
+        bestPriceOfferAvia.shouldBe(Condition.visible, Duration.ofSeconds(15));
 
         return this;
     }

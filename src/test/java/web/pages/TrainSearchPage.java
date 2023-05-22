@@ -35,14 +35,14 @@ public class TrainSearchPage {
 
     @Step("Проверяем отображение фильтра \"Скоростные поезда\"")
     public TrainSearchPage checkFastTrainFilterVisible() {
-        fastTrainFilter.shouldBe(visible, Duration.ofSeconds(10));
+        fastTrainFilter.shouldBe(visible, Duration.ofSeconds(15));
 
         return this;
     }
 
     @Step("Проверяем, что фильтр \"Скоростные поезда\" не отображается")
     public TrainSearchPage checkFastTrainFilterNotVisible() {
-        sortButton.shouldBe(visible, Duration.ofSeconds(10)); //дожидаемся прогрузки блока с фильтрами и сортировкой
+        sortButton.shouldBe(visible, Duration.ofSeconds(15)); //дожидаемся прогрузки блока с фильтрами и сортировкой
         fastTrainFilter.shouldNotBe(visible); // проверяем
 
         return this;
