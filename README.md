@@ -120,13 +120,13 @@ gradle clean test
 
 
 ## <img width="4%" style="vertical-align:middle" title="Allure Report" src="images/logo/Allure_Report.svg"> Пример Allure-отчета
-### Overview
+### Главная страница
 
 <p align="center">
 <img title="Allure Overview" src="images/screenshots/allureReportMain.png">
 </p>
 
-### Результат выполнения теста
+### Результат выполнения тестов
 
 <p align="center">
 <img title="Test Results in Allure" src="images/screenshots/allureReportTests.png">
