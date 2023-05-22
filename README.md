@@ -110,10 +110,10 @@ gradle clean test
 <img title="Jenkins Build" src="images/screenshots/jenkinsBuild.png">
 </p>
 
-1.  Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/18-kiselevanm-Jenkins-diploma/">**сборку в Jenkins**</a>;
-   * Для корректного открытия ссылки требуется авторизация на <a target="_blank" href="https://jenkins.autotests.cloud/">**jenkins.autotests.cloud**</a>
+1.  Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/18-kiselevanm-Jenkins-diploma/">**сборку в Jenkins**</a>
+    * Для корректного открытия ссылки требуется авторизация на <a target="_blank" href="https://jenkins.autotests.cloud/">**jenkins.autotests.cloud**</a>
 2. В боковом меню выбрать пункт **"Собрать с параметрами"**;
-3. Выбрать параметр из выпадающего списка
+3. Выбрать параметр из выпадающего списка:
    * В данной сборке задается только параметр для удаленного сервера для запуска теста, остальные значения параметров берутся из <code>remote.properties</code>;
 4. Нажать кнопку **"Собрать"**;
 5. После прогона тестов в блоке **"История сборок"** появятся ссылки на **Allure-отчет** и на **Allure TestOps**.
