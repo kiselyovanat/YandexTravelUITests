@@ -7,7 +7,7 @@
 - [Сборка в Jenkins](#-сборка-в-jenkins)
 - [Пример Allure-отчета](#-пример-allure-отчета)
 - [Уведомления в Telegram с использованием бота](#-уведомления-в-telegram-с-использованием-бота)
-- [Видео примера запуска теста в Selenoid](#-видео-примера-запуска-теста-в-selenoid)
+- [Видео-пример запуска теста в Selenoid](#-видео-примера-запуска-теста-в-selenoid)
 
 ## :computer: Использованный стек технологий
 
@@ -60,7 +60,7 @@ gradle clean test -Denv=local
 
 ### Запуск тестов на удаленном браузере
 ```
-gradle clean test -Denv=remote
+gradle clean test -Denv=remote -DremoteUrl=${REMOTE_URL}
 ```
 
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="images/logo/Jenkins.svg"> Сборка в Jenkins
