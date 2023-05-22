@@ -77,5 +77,5 @@ gradle clean test -Denv=remote
 
 К каждому тесту в отчете прилагается видео. Одно из таких видео представлено ниже.
 <p align="center">
-  <img title="Selenoid Video" src="images/gif/videoExample.mp4">
+  <img title="Selenoid Video" src="images/gif/videoExample.gif">
 </p>
