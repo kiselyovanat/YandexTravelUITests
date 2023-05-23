@@ -31,7 +31,6 @@ public class TrainSearchTests extends TestBase {
                 .submit();
 
         trainSearchPage.checkSearchResultsExist();
-
     }
 
     @Feature("Страница поиска ж/д билетов Яндекс.Путешествия")
@@ -49,7 +48,6 @@ public class TrainSearchTests extends TestBase {
                 .submit();
 
         trainSearchPage.checkSearchResultsHeader(trainSearchData.getDestinationCity());
-
     }
 
     @Feature("Страница поиска ж/д билетов Яндекс.Путешествия")
@@ -67,7 +65,6 @@ public class TrainSearchTests extends TestBase {
                 .submit();
 
         trainSearchPage.checkFastTrainFilterVisible();
-
     }
 
     @Feature("Страница поиска ж/д билетов Яндекс.Путешествия")
@@ -85,6 +82,5 @@ public class TrainSearchTests extends TestBase {
                 .submit();
 
         trainSearchPage.checkFastTrainFilterNotVisible();
-
     }
 }

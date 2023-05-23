@@ -31,8 +31,5 @@ public class SearchDataGenerator {
                 .setEndMonth(endMonth)
                 .setDepartureCity(departureCity)
                 .setDestinationCity(destinationCity);
-
     }
-
-
 }

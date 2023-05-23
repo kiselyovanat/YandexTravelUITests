@@ -17,7 +17,6 @@ public class TrainSearchPage {
             fastTrainFilter = $(".ba14r").$(byText("Скоростные поезда")),
             sortButton = $(".ba14r").$(byText("Сортировка"));
 
-
     @Step("Проверяем наличие города-назначения в заголовке результатов поиска")
     public TrainSearchPage checkSearchResultsHeader(String destinationCity) {
         searchResultsHeader.shouldBe(visible, Duration.ofSeconds(10));
@@ -47,5 +46,4 @@ public class TrainSearchPage {
 
         return this;
     }
-
 }

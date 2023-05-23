@@ -50,5 +50,4 @@ public class SearchBarTests extends TestBase {
                 .openCategory(category)
                 .checkSearchBarItems(searchBarItems);
     }
-
 }

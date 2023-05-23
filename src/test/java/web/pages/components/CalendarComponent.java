@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class CalendarComponent {
 
-    public void setDate(String day, String month){
+    public void setDate(String day, String month) {
         $(".monthsList").$(byText(month)).click();
         $(".aCtN8").$(byText(month)).parent().parent().$(byText(day)).click();
     }

@@ -9,7 +9,6 @@ import web.pages.MainPage;
 import web.testData.SearchData;
 import web.testData.SearchDataGenerator;
 
-
 public class AviaSearchTests extends TestBase {
 
     public AviaSearchPage aviaSearchPage = new AviaSearchPage();
@@ -29,6 +28,5 @@ public class AviaSearchTests extends TestBase {
                 .submit();
 
         aviaSearchPage.checkSearchResultsHasBestPriceOffer();
-
     }
 }
