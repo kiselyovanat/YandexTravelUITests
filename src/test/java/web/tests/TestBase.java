@@ -1,7 +1,7 @@
 package web.tests;
 
 import com.codeborne.selenide.Configuration;
-import config.WebConfig;
+import web.config.WebConfig;
 import helpers.Attach;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
