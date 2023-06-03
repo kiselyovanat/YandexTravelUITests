@@ -3,6 +3,7 @@ package web.tests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import web.pages.AviaSearchPage;
 import web.pages.MainPage;
@@ -18,10 +19,12 @@ public class AviaSearchTests extends TestBase {
     @Story("Проверяем функцию поиска авиабилетов")
     @DisplayName("Проверяем наличие лучшего предложения среди результатов поиска авиабилетов из Москвы в Белград")
     @Test
+    @Tag("UITest")
     void aviaBestPriceOfferSearchTest() {
         SearchData aviaSearchData = SearchDataGenerator.generateSearchParams("Москва", "Белград");
         mainPage.openPage("/")
                 .openCategory("Авиа")
+                .inputDeparture(aviaSearchData.getDepartureCity())
                 .inputDestination(aviaSearchData.getDestinationCity())
                 .inputStartDate(aviaSearchData.getStartDay(), aviaSearchData.getStartMonth())
                 .inputEndDate(aviaSearchData.getEndDay(), aviaSearchData.getEndMonth())

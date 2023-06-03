@@ -3,6 +3,7 @@ package web.tests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import web.pages.MainPage;
 import web.pages.TrainSearchPage;
@@ -20,6 +21,7 @@ public class TrainSearchTests extends TestBase {
     @Story("Проверяем функцию поиска ж/д билетов")
     @DisplayName("Проверяем наличие результатов поиска ж/д билетов")
     @Test
+    @Tag("UITest")
     void trainSearchResultsExistTest() {
         SearchData trainSearchData = SearchDataGenerator.generateSearchParams(departureCity, destinationCity);
         mainPage.openPage("/")
@@ -37,6 +39,7 @@ public class TrainSearchTests extends TestBase {
     @Story("Проверяем функцию поиска ж/д билетов")
     @DisplayName("Проверяем наличие города-назначения в заголовке результатов поиска ж/д билетов")
     @Test
+    @Tag("UITest")
     void trainSearchHeaderHasDestinationCityTest() {
         SearchData trainSearchData = SearchDataGenerator.generateSearchParams(departureCity, destinationCity);
         mainPage.openPage("/")
@@ -54,6 +57,7 @@ public class TrainSearchTests extends TestBase {
     @Story("Проверяем отображение фильтра \"Скоростные поезда\"")
     @DisplayName("Проверяем наличие фильтра \"Скоростные поезда\" при поиске ж/д билетов в Санкт-Петербург")
     @Test
+    @Tag("UITest")
     void trainSearchFiltersHasFastTrainFilterTest() {
         SearchData trainSearchData = SearchDataGenerator.generateSearchParams(departureCity, "Санкт-Петербург");
         mainPage.openPage("/")
@@ -71,6 +75,7 @@ public class TrainSearchTests extends TestBase {
     @Story("Проверяем отображение фильтра \"Скоростные поезда\"")
     @DisplayName("Проверяем отсутствие фильтра \"Скоростные поезда\" при поиске ж/д билетов не в Санкт-Петербург")
     @Test
+    @Tag("UITest")
     void trainSearchFiltersDoesNotHaveFastTrainFilterTest() {
         SearchData trainSearchData = SearchDataGenerator.generateSearchParams(departureCity, "Казань");
         mainPage.openPage("/")

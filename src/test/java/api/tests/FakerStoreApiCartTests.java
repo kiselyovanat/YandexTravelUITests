@@ -7,6 +7,7 @@ import api.models.cart.ProductInCartModel;
 import com.github.javafaker.Faker;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -26,7 +27,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class FakerStoreApiCartTests {
 
     @Test
-    @Feature("Тесты для FakeStoreApi - Cart")
+    @Tag("APITest")
+    @Feature("FakeStoreApi - взаимодействие с корзинами")
     @DisplayName("Получение одной корзины")
     void getSingleCartTest() {
         CartModel response = step("Делаем запрос на получение корзины с id=5", () ->
@@ -44,7 +46,8 @@ public class FakerStoreApiCartTests {
     }
 
     @Test
-    @Feature("Тесты для FakeStoreApi - Cart")
+    @Tag("APITest")
+    @Feature("FakeStoreApi - взаимодействие с корзинами")
     @DisplayName("Добавление корзины юзеру")
     void addCartTest() {
         Faker faker = new Faker();
@@ -84,7 +87,8 @@ public class FakerStoreApiCartTests {
     }
 
     @Test
-    @Feature("Тесты для FakeStoreApi - Cart")
+    @Tag("APITest")
+    @Feature("FakeStoreApi - взаимодействие с корзинами")
     @DisplayName("Удаление корзины")
     void deleteCartTest() {
         CartModel response = step("Удаляем корзину", () ->

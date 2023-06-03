@@ -7,6 +7,7 @@ import api.models.product.PostResponseProductModel;
 import com.github.javafaker.Faker;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.Locale;
@@ -24,7 +25,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class FakeStoreApiProductTests {
 
     @Test
-    @Feature("Тесты для FakeStoreApi - Products")
+    @Tag("APITest")
+    @Feature("FakeStoreApi - взаимодействие с продуктами")
     @DisplayName("Получение одного продукта")
     void getSingleProductTest() {
         GetProductModel response = step("Делаем запрос на получение продукта с id=5", () ->
@@ -47,7 +49,8 @@ public class FakeStoreApiProductTests {
     }
 
     @Test
-    @Feature("Тесты для FakeStoreApi - Products")
+    @Tag("APITest")
+    @Feature("FakeStoreApi - взаимодействие с продуктами")
     @DisplayName("Добавление продукта")
     void addProductTest() {
         Faker faker = new Faker(new Locale("en"));
@@ -82,7 +85,8 @@ public class FakeStoreApiProductTests {
     }
 
     @Test
-    @Feature("Тесты для FakeStoreApi - Products")
+    @Tag("APITest")
+    @Feature("FakeStoreApi - взаимодействие с продуктами")
     @DisplayName("Удаление продукта")
     void deleteProductTest() {
         DeleteResponseProductModel response = step("Удаляем продукт", () ->

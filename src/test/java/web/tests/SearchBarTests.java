@@ -3,6 +3,7 @@ package web.tests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -35,6 +36,7 @@ public class SearchBarTests extends TestBase {
     @DisplayName("Проверяем пункты меню: ")
     @ParameterizedTest(name = "пункты меню содержат {0}")
     @MethodSource
+    @Tag("UITest")
     void mainMenuContentTest(List<String> menuItems) {
         mainPage.openPage("/")
                 .checkMainMenuItems(menuItems);
@@ -45,6 +47,7 @@ public class SearchBarTests extends TestBase {
     @DisplayName("Проверяем пункты строк поиска во всех категориях: ")
     @ParameterizedTest(name = "cтрока поиска на странице {0} содержит пункты {1}")
     @MethodSource
+    @Tag("UITest")
     void searchBarContentTest(String category, List<String> searchBarItems) {
         mainPage.openPage("/")
                 .openCategory(category)
