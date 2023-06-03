@@ -20,7 +20,6 @@ public class TestBase {
         Configuration.browser = webConfig.getBrowser();
         Configuration.browserVersion = webConfig.getBrowserVersion();
         Configuration.baseUrl = webConfig.getBaseUrl();
-        Configuration.holdBrowserOpen = true;
         if (webConfig.getRemoteUrl() != null) {
             Configuration.remote = webConfig.getRemoteUrl();
         }
