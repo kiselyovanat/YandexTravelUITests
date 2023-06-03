@@ -7,6 +7,7 @@ import web.pages.components.CalendarComponent;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -57,6 +58,7 @@ public class MainPage {
 
     @Step("Вводим пункт отправления (Откуда)")
     public MainPage inputDeparture(String departure) {
+        departureInput.shouldBe(visible);
         if (departureCleanButton.exists()) { //иногда поле заполняется текущей локацией, иногда нет
             departureCleanButton.click();
         }
