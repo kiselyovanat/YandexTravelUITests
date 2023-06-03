@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import web.pages.components.CalendarComponent;
 
+import java.time.Duration;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.text;
@@ -17,6 +18,7 @@ public class MainPage {
             menuBar = $(".GGc2p"),
             searchBar = $(".RhypN"),
             departureCleanButton = $(".QDUng"),
+            departurePreInput = $(".Nxcfj"),
             departureInput = $(".Y5YPM").$(".w_eHd"),
             destinationInput = $(".gQElT").$(".w_eHd"),
             citySearchResults = $(".EW8x1"),
@@ -58,8 +60,7 @@ public class MainPage {
 
     @Step("Вводим пункт отправления (Откуда)")
     public MainPage inputDeparture(String departure) {
-        departureInput.shouldBe(visible);
-        if (departureCleanButton.exists()) { //иногда поле заполняется текущей локацией, иногда нет
+        if (departureCleanButton.shouldBe(visible,  Duration.ofSeconds(5)) != null) { //иногда поле заполняется текущей локацией, иногда нет
             departureCleanButton.click();
         }
         departureInput.click();
