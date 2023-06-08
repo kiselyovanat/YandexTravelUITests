@@ -1,7 +1,7 @@
 # Проект по автоматизации тестирования страницы Jetbrains Products
 ## :pushpin: Содержание:
 
-- [Использованный стек технологийТехнологии и инструменты](#-computer--технологии-и-инструменты)
+- [Технологии и инструменты](#-computer-технологии-и-инструменты)
 - [Запуск тестов](#running_woman-запуск-тестов)
 - [Список тестов](#bookmark_tabs-список-тестов)
 - [Сборка в Jenkins](#-сборка-в-jenkins)
@@ -122,7 +122,7 @@ gradle clean test -Denv=remote -DremoteUrl=${REMOTE_URL}
 Если необходимо переопределить дефолтные значения параметров (вместо {} подставить требуемое значение):
 
 ```bash
-gradle clean UItests 
+gradle clean UItest 
 -Dbrowser={BROWSER}
 -DbrowserVersion={BROWSER_VERSION}
 -DbrowserSize={BROWSER_SIZE}
