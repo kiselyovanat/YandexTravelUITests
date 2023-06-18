@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class ProductRatingModel {
-    String rate, count;
+    private String rate, count;
 }

@@ -6,6 +6,6 @@ import java.util.List;
 
 @Data
 public class PostCartRequestModel {
-    String userId, date;
-    List<ProductInCartModel> products;
+    private String userId, date;
+    private List<ProductInCartModel> products;
 }

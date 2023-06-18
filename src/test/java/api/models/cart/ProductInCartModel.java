@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class ProductInCartModel {
-    String productId, quantity;
+    private String productId, quantity;
 }

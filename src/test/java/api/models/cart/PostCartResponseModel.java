@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class PostCartResponseModel {
-    String id;
+    private String id;
 }

@@ -24,12 +24,13 @@ public class SearchDataGenerator {
         String endDay = (new SimpleDateFormat("d", ruLocale)).format(endDate),
                 endMonth = capitalizeFully((new SimpleDateFormat("MMMM", ruLocale)).format(endDate));
 
-        return new SearchData()
-                .setStartDay(startDay)
-                .setStartMonth(startMonth)
-                .setEndDay(endDay)
-                .setEndMonth(endMonth)
-                .setDepartureCity(departureCity)
-                .setDestinationCity(destinationCity);
+        return SearchData.builder()
+                .startDay(startDay)
+                .startMonth(startMonth)
+                .endDay(endDay)
+                .endMonth(endMonth)
+                .departureCity(departureCity)
+                .destinationCity(destinationCity)
+                .build();
     }
 }

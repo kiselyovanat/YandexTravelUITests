@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class DeleteResponseProductModel {
-    String id, title, price, category, description, image;
+    private String id, title, price, category, description, image;
 }

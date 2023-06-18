@@ -6,7 +6,7 @@ import java.util.List;
 
 @Data
 public class CartModel {
-    String id, userId, date;
-    List<ProductInCartModel> products;
+    private String id, userId, date;
+    private List<ProductInCartModel> products;
 
 }

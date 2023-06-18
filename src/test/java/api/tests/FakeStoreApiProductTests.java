@@ -21,6 +21,7 @@ import static api.specs.product.PostProductSpec.postProductResponseSpec;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FakeStoreApiProductTests {
 
@@ -40,11 +41,11 @@ public class FakeStoreApiProductTests {
         step("Проверяем наименование продукта", () ->
                 assertThat(response.getTitle()).contains("Station Chain Bracelet"));
         step("Проверяем категорию продукта", () ->
-                assertThat(response.getCategory()).isEqualTo("jewelery"));
+                assertEquals(response.getCategory(),"jewelery"));
         step("Проверяем цену продукта", () ->
-                assertThat(response.getPrice()).isEqualTo("695"));
+                assertEquals(response.getPrice(),"695"));
         step("Проверяем рейтинг продукта", () ->
-                assertThat(response.getRating().getRate()).isEqualTo("4.6"));
+                assertEquals(response.getRating().getRate(),"4.6"));
 
     }
 
@@ -78,7 +79,7 @@ public class FakeStoreApiProductTests {
                         .extract().as(PostResponseProductModel.class));
 
         step("Проверяем id продукта", () ->
-                assertThat(response.getId()).isEqualTo("21"));
+                assertEquals(response.getId(),"21"));
         //в документации сказано, что в ответе возвращается полный объект,
         //но по факту возвращается только id, который всегда равен 21
 
@@ -98,6 +99,6 @@ public class FakeStoreApiProductTests {
                         .extract().as(DeleteResponseProductModel.class));
 
         step("Проверяем id продукта в ответе", () ->
-                assertThat(response.getId()).isEqualTo("5"));
+                assertEquals(response.getId(),"5"));
     }
 }

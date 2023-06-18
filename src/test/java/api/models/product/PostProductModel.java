@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class PostProductModel {
-    String title, price, category, description, image;
+    private String title, price, category, description, image;
 }
