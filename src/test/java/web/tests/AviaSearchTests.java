@@ -20,7 +20,7 @@ public class AviaSearchTests extends TestBase {
     @DisplayName("Проверяем наличие лучшего предложения среди результатов поиска авиабилетов из Москвы в Белград")
     @Test
     @Tag("UITest")
-    void aviaBestPriceOfferSearchTest() throws InterruptedException {
+    void aviaBestPriceOfferSearchTest() {
         SearchData aviaSearchData = SearchDataGenerator.generateSearchParams("Москва", "Белград");
         mainPage.openPage("/")
                 .openCategory("Авиа")

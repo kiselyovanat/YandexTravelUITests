@@ -57,7 +57,7 @@ public class MainPage {
     }
 
     @Step("Вводим пункт отправления (Откуда)")
-    public MainPage inputDeparture(String departure) throws InterruptedException {
+    public MainPage inputDeparture(String departure) {
         this.clearAutocompleteValueIfPresent(3);
         departureInput.click();
         departureInput.setValue(departure);
@@ -97,7 +97,7 @@ public class MainPage {
         return this;
     }
 
-    private MainPage clearAutocompleteValueIfPresent(int maxWaitTimeInSeconds) throws InterruptedException {
+    private MainPage clearAutocompleteValueIfPresent(int maxWaitTimeInSeconds) {
         long start = System.currentTimeMillis();
         long end = start + maxWaitTimeInSeconds * 1000;
         while (System.currentTimeMillis() < end) {
@@ -105,7 +105,6 @@ public class MainPage {
                 departureCleanButton.click();
                 break;
             }
-            Thread.sleep(300);
         }
         return this;
     }
