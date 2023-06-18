@@ -22,7 +22,7 @@ public class TrainSearchTests extends TestBase {
     @DisplayName("Проверяем наличие результатов поиска ж/д билетов")
     @Test
     @Tag("UITest")
-    void trainSearchResultsExistTest() {
+    void trainSearchResultsExistTest() throws InterruptedException {
         SearchData trainSearchData = SearchDataGenerator.generateSearchParams(departureCity, destinationCity);
         mainPage.openPage("/")
                 .openCategory("Ж/д")
@@ -40,7 +40,7 @@ public class TrainSearchTests extends TestBase {
     @DisplayName("Проверяем наличие города-назначения в заголовке результатов поиска ж/д билетов")
     @Test
     @Tag("UITest")
-    void trainSearchHeaderHasDestinationCityTest() {
+    void trainSearchHeaderHasDestinationCityTest() throws InterruptedException {
         SearchData trainSearchData = SearchDataGenerator.generateSearchParams(departureCity, destinationCity);
         mainPage.openPage("/")
                 .openCategory("Ж/д")
@@ -58,7 +58,7 @@ public class TrainSearchTests extends TestBase {
     @DisplayName("Проверяем наличие фильтра \"Скоростные поезда\" при поиске ж/д билетов в Санкт-Петербург")
     @Test
     @Tag("UITest")
-    void trainSearchFiltersHasFastTrainFilterTest() {
+    void trainSearchFiltersHasFastTrainFilterTest() throws InterruptedException {
         SearchData trainSearchData = SearchDataGenerator.generateSearchParams(departureCity, "Санкт-Петербург");
         mainPage.openPage("/")
                 .openCategory("Ж/д")
@@ -76,7 +76,7 @@ public class TrainSearchTests extends TestBase {
     @DisplayName("Проверяем отсутствие фильтра \"Скоростные поезда\" при поиске ж/д билетов не в Санкт-Петербург")
     @Test
     @Tag("UITest")
-    void trainSearchFiltersDoesNotHaveFastTrainFilterTest() {
+    void trainSearchFiltersDoesNotHaveFastTrainFilterTest() throws InterruptedException {
         SearchData trainSearchData = SearchDataGenerator.generateSearchParams(departureCity, "Казань");
         mainPage.openPage("/")
                 .openCategory("Ж/д")
