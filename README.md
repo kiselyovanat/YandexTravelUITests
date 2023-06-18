@@ -31,15 +31,7 @@
 Автотесты написаны на <code>Java</code> с использованием <code>JUnit 5</code> и <code>Gradle</code>.
 Для UI-тестов использован фреймворк [Selenide](https://selenide.org/).
 Запуск тестов можно осуществлять локально или с помощью [Selenoid](https://aerokube.com/selenoid/).
-Также реализована сборка в <code>Jenkins</code> с формированием Allure-отчета и отправкой уведомления с результатами в <code>Telegram</code> после завершения прогона.
-
-Allure-отчет включает в себя:
-* шаги выполнения тестов;
-* скриншот страницы в браузере в момент окончания автотеста;
-* исходный код страницы;
-* логи браузерной консоли;
-* видео выполнения автотеста.
-
+Также настроена сборка в <code>Jenkins</code> с формированием Allure-отчета и отправкой уведомления с результатами в <code>Telegram</code> после завершения прогона.
 
 ## :bookmark_tabs: Список тестов:
 ### UI тесты для Яндекс Путешествия
@@ -180,7 +172,7 @@ gradle clean UItest
 
 ### <img width="4%" style="vertical-align:middle" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
 
-После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне.
+После завершения сборки Telegram-бот, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне.
 
 <p align="center">
 <img width="70%" title="Telegram Notifications" src="images/screenshots/notificationExample.png">
