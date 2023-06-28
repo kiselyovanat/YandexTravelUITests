@@ -25,4 +25,7 @@ public interface WebConfig extends Config {
     @Key("baseUrl")
     @DefaultValue("https://travel.yandex.ru")
     String getBaseUrl();
+
+    @Key("attachVideoUrl")
+    String getAttachVideoUrl();
 }

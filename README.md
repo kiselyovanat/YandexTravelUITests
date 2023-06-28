@@ -69,6 +69,8 @@ gradle clean test {и далее параметры сборки тестов}
 > <code>BROWSER_SIZE</code> – размер окна браузера.
 > 
 > <code>BASE_URL</code> – URL главной страницы тестируемого сайта.
+>
+> <code>ATTACH_VIDEO_URL</code> – базовая часть URL для получения видео из удаленного браузера 
 
 Дефолтные значения параметров для локального запуска тестов задаются в файле <code>local.properties</code>.
 
@@ -92,18 +94,19 @@ gradle clean test
 
 #### Запуск тестов на удаленном сервере
 ```bash
-gradle clean test -Denv=remote -DremoteUrl=${REMOTE_URL}
+gradle clean test -Denv=remote -DremoteUrl={REMOTE_URL} -DattachVideoUrl={ATTACH_VIDEO_URL}
 ```
 
 Если необходимо переопределить дефолтные значения параметров (вместо {} подставить требуемое значение):
 
 ```bash
-gradle clean UItest 
+gradle clean test 
 -Dbrowser={BROWSER}
 -DbrowserVersion={BROWSER_VERSION}
 -DbrowserSize={BROWSER_SIZE}
 -DremoteUrl={REMOTE_URL}
 -DbaseUrl={BASE_URL}
+-DattachVideoUrl={ATTACH_VIDEO_URL}
 ```
 
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="images/logo/Jenkins.svg"> Сборка в Jenkins
