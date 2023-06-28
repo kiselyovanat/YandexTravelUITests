@@ -31,7 +31,11 @@
 Автотесты написаны на <code>Java</code> с использованием <code>JUnit 5</code> и <code>Gradle</code>.
 Для UI-тестов использована библиотека [Selenide](https://selenide.org/).
 Запуск тестов можно осуществлять локально или с помощью [Selenoid](https://aerokube.com/selenoid/).
-Также настроена сборка в <code>Jenkins</code> с формированием Allure-отчета и отправкой уведомления с результатами в <code>Telegram</code> после завершения прогона.
+Также настроена сборка в <code>Jenkins</code>:
+* с формированием Allure-отчета,
+* с интеграцией с Allure TestOps,
+* c интеграцией с Jira,
+* c отправкой уведомления с результатами в <code>Telegram</code> после завершения прогона.
 
 ## :bookmark_tabs: Список тестов:
 ### UI тесты для Яндекс Путешествия
@@ -108,7 +112,7 @@ gradle clean UItest
 <img title="Jenkins Build" src="images/screenshots/jenkinsBuild.png">
 </p>
 
-1.  Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/18-kiselevanm-Jenkins-diploma/">**сборку в Jenkins**</a>
+1.  Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/Students/job/18-kiselevanm-Jenkins-diploma/">**сборку в Jenkins**</a>
     * Для корректного открытия ссылки требуется авторизация на <a target="_blank" href="https://jenkins.autotests.cloud/">**jenkins.autotests.cloud**</a>
 2. В боковом меню выбрать пункт **"Собрать с параметрами"**;
 3. Выбрать параметры из выпадающего списка;
