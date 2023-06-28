@@ -58,7 +58,7 @@ public class SearchBarPage {
 
     @Step("Вводим пункт отправления (Откуда)")
     public SearchBarPage inputDeparture(String departure) {
-        this.clearAutocompleteValueIfPresent(3);
+        this.clearAutocompleteDepartureValueIfPresent(3);
         departureInput.click();
         departureInput.setValue(departure);
         citySearchResults.$(byText(departure)).click();
@@ -97,7 +97,12 @@ public class SearchBarPage {
         return this;
     }
 
-    private SearchBarPage clearAutocompleteValueIfPresent(int maxWaitTimeInSeconds) {
+    // поле "Откуда" иногда предзаполняется значением, которое определяется по геолокации
+    // в случае, если оно заполнено, то отбражается кнопка, которая удаляет значение в поле
+    // эта кнопка появляется с небольшой задержкой
+    // суть этой функции - подождать заданное время до появления этой кнопки и если она появилась - нажать
+    // иначе считаем, что поле "Откуда" пустое и нажатие кнопки не требуется
+    private SearchBarPage clearAutocompleteDepartureValueIfPresent(int maxWaitTimeInSeconds) {
         long start = System.currentTimeMillis();
         long end = start + maxWaitTimeInSeconds * 1000;
         while (System.currentTimeMillis() < end) {
