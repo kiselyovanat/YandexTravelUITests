@@ -6,23 +6,22 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import web.pages.AviaSearchPage;
-import web.pages.MainPage;
+import web.pages.SearchBarPage;
 import web.testData.SearchData;
 import web.testData.SearchDataGenerator;
 
+@Feature("Страница поиска авиабилетов Яндекс.Путешествия")
 public class AviaSearchTests extends TestBase {
 
     public AviaSearchPage aviaSearchPage = new AviaSearchPage();
-    public MainPage mainPage = new MainPage();
+    public SearchBarPage searchBarPage = new SearchBarPage();
 
-    @Feature("Страница поиска авиабилетов Яндекс.Путешествия")
     @Story("Проверяем функцию поиска авиабилетов")
     @DisplayName("Проверяем наличие лучшего предложения среди результатов поиска авиабилетов из Москвы в Белград")
     @Test
-    @Tag("UITest")
     void aviaBestPriceOfferSearchTest() {
         SearchData aviaSearchData = SearchDataGenerator.generateSearchParams("Москва", "Белград");
-        mainPage.openPage("/")
+        searchBarPage.openPage()
                 .openCategory("Авиа")
                 .inputDeparture(aviaSearchData.getDepartureCity())
                 .inputDestination(aviaSearchData.getDestinationCity())

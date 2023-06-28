@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class MainPage {
+public class SearchBarPage {
     private final SelenideElement
             menuBar = $(".GGc2p"),
             searchBar = $(".RhypN"),
@@ -25,14 +25,14 @@ public class MainPage {
     private CalendarComponent calendarComponent = new CalendarComponent();
 
     @Step("Открываем главную страницу")
-    public MainPage openPage(String url) {
-        open(url);
+    public SearchBarPage openPage() {
+        open("/");
 
         return this;
     }
 
     @Step("Проверяем пункты меню")
-    public MainPage checkMainMenuItems(List<String> menuItems) {
+    public SearchBarPage checkMainMenuItems(List<String> menuItems) {
         for (String item : menuItems) {
             menuBar.shouldHave(text(item));
         }
@@ -41,14 +41,14 @@ public class MainPage {
     }
 
     @Step("Открываем категорию")
-    public MainPage openCategory(String categoryItem) {
+    public SearchBarPage openCategory(String categoryItem) {
         menuBar.$(byText(categoryItem)).click();
 
         return this;
     }
 
     @Step("Проверяем содержимое строки поиска")
-    public MainPage checkSearchBarItems(List<String> menuItems) {
+    public SearchBarPage checkSearchBarItems(List<String> menuItems) {
         for (String item : menuItems) {
             searchBar.shouldHave(text(item));
         }
@@ -57,7 +57,7 @@ public class MainPage {
     }
 
     @Step("Вводим пункт отправления (Откуда)")
-    public MainPage inputDeparture(String departure) {
+    public SearchBarPage inputDeparture(String departure) {
         this.clearAutocompleteValueIfPresent(3);
         departureInput.click();
         departureInput.setValue(departure);
@@ -67,7 +67,7 @@ public class MainPage {
     }
 
     @Step("Вводим пункт назначения (Куда)")
-    public MainPage inputDestination(String destination) {
+    public SearchBarPage inputDestination(String destination) {
         destinationInput.click();
         destinationInput.setValue(destination);
         citySearchResults.$(byText(destination)).click();
@@ -76,7 +76,7 @@ public class MainPage {
     }
 
     @Step("Вводим дату отправления (Туда)")
-    public MainPage inputStartDate(String day, String month) {
+    public SearchBarPage inputStartDate(String day, String month) {
         startDateInput.click();
         calendarComponent.setDate(day, month);
 
@@ -84,20 +84,20 @@ public class MainPage {
     }
 
     @Step("Вводим дату возвращения (Оттуда)")
-    public MainPage inputEndDate(String day, String month) {
+    public SearchBarPage inputEndDate(String day, String month) {
         calendarComponent.setDate(day, month);
 
         return this;
     }
 
     @Step("Нажимаем кнопку Найти")
-    public MainPage submit() {
+    public SearchBarPage submit() {
         submitButton.click();
 
         return this;
     }
 
-    private MainPage clearAutocompleteValueIfPresent(int maxWaitTimeInSeconds) {
+    private SearchBarPage clearAutocompleteValueIfPresent(int maxWaitTimeInSeconds) {
         long start = System.currentTimeMillis();
         long end = start + maxWaitTimeInSeconds * 1000;
         while (System.currentTimeMillis() < end) {

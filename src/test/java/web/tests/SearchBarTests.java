@@ -7,13 +7,14 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import web.pages.MainPage;
+import web.pages.SearchBarPage;
 
 import java.util.List;
 import java.util.stream.Stream;
 
+@Feature("Строка поиска на странице сайта Яндекс.Путешествия")
 public class SearchBarTests extends TestBase {
-    public MainPage mainPage = new MainPage();
+    public SearchBarPage searchBarPage = new SearchBarPage();
 
     static Stream<Arguments> mainMenuContentTest() {
         return Stream.of(
@@ -31,25 +32,22 @@ public class SearchBarTests extends TestBase {
         );
     }
 
-    @Feature("Главная страница сайта Яндекс.Путешествия")
     @Story("Проверяем содержимое главной страницы")
     @DisplayName("Проверяем пункты меню: ")
     @ParameterizedTest(name = "пункты меню содержат {0}")
     @MethodSource
     @Tag("UITest")
     void mainMenuContentTest(List<String> menuItems) {
-        mainPage.openPage("/")
+        searchBarPage.openPage()
                 .checkMainMenuItems(menuItems);
     }
 
-    @Feature("Главная страница сайта Яндекс.Путешествия")
     @Story("Проверяем содержимое главной страницы")
     @DisplayName("Проверяем пункты строк поиска во всех категориях: ")
     @ParameterizedTest(name = "cтрока поиска на странице {0} содержит пункты {1}")
     @MethodSource
-    @Tag("UITest")
     void searchBarContentTest(String category, List<String> searchBarItems) {
-        mainPage.openPage("/")
+        searchBarPage.openPage()
                 .openCategory(category)
                 .checkSearchBarItems(searchBarItems);
     }

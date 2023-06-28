@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class AviaSearchPage {
     private final SelenideElement
-            bestPriceOfferAvia = $(byText("лучшая цена"));
+            bestPriceOfferAvia = $(byText("Лучшая цена"));
 
     @Step("Проверяем отображение предложения \"Лучшая цена\"")
     public AviaSearchPage checkSearchResultsHasBestPriceOffer() {
